@@ -1,0 +1,56 @@
+import { Platform, StatusBar, Dimensions } from "react-native";
+
+export const SCREEN_HEIGHT = Dimensions.get("window").height;
+export const SCREEN_WIDTH = Dimensions.get("window").width;
+
+const IMAGE_BASE_URL = "../../assets/images/";
+const ICON_BASE_URL = "../../assets/icons/";
+
+export const LOGO = require(IMAGE_BASE_URL + "logo.png");
+export const ONBOARDING_BG = require(IMAGE_BASE_URL + "onboardingBG.png");
+export const ONBOARDING_BG2 = require(IMAGE_BASE_URL + "onboardingBG2.png");
+export const ONBOARDING_BG3 = require(IMAGE_BASE_URL + "OnboardingBG3.png");
+export const GOOGLE_LOGO = require(IMAGE_BASE_URL + "googleLogo.png");
+export const FACEBOOK_LOGO = require(IMAGE_BASE_URL + "facebookLogo.png");
+export const LOCK = require(IMAGE_BASE_URL + "lock.png");
+export const TOPLOGO = require(IMAGE_BASE_URL + "toplogo.png");
+export const BADGE = require(IMAGE_BASE_URL + "badge.png");
+export const CLOUD = require(IMAGE_BASE_URL + "cloud.png");
+export const BELL = require(IMAGE_BASE_URL + "bell.png");
+export const MENU = require(IMAGE_BASE_URL + "menu.png");
+export const IMAGEBACK = require(IMAGE_BASE_URL + "imageBack.png");
+export const PROFILE = require(IMAGE_BASE_URL + "profile.png");
+export const PROFILE2 = require(IMAGE_BASE_URL + "profile2.png");
+export const SCHBG = require(IMAGE_BASE_URL + "schedulebg.png");
+export const OPENBG = require(IMAGE_BASE_URL + "openGames.png");
+export const COINBG = require(IMAGE_BASE_URL + "coin0bg.png");
+export const DOLLAR = require(IMAGE_BASE_URL + "dollar.png");
+export const MASTERCARD = require(IMAGE_BASE_URL + "mastercard.png");
+export const DOLLAR_RIGHT = require(IMAGE_BASE_URL + "dollar-right.png");
+export const GOLDCOIN = require(IMAGE_BASE_URL + "gold-coin.png");
+export const GOLDCOINSIMPLE = require(IMAGE_BASE_URL + "gold-puck.png");
+export const STAR = require(IMAGE_BASE_URL + "goldstart.png");
+export const PICKUP_BG = require(IMAGE_BASE_URL + "PickupBack.png");
+export const LOADER = require(IMAGE_BASE_URL + "loader.png");
+export const LEAGUE = require(IMAGE_BASE_URL + "leagueMian.png");
+export const TOURNAMENT = require(IMAGE_BASE_URL + "tournament.png");
+export const SUBIN = require(IMAGE_BASE_URL + "subin.png");
+export const LEAGUE_BG = require(IMAGE_BASE_URL + "LeagueBG.png");
+
+export const USER = require(ICON_BASE_URL + "user.png");
+export const SHARE = require(ICON_BASE_URL + "share.png");
+export const SETTINGS = require(ICON_BASE_URL + "settings.png");
+export const DRAWER_LOCK = require(ICON_BASE_URL + "lock.png");
+export const LIVE = require(ICON_BASE_URL + "live.png");
+export const HOCKEY = require(ICON_BASE_URL + "hockey.png");
+export const COIN = require(ICON_BASE_URL + "coin.png");
+export const HOME_ACTIVE = require(ICON_BASE_URL + "home-active.png");
+export const LEAGUE_INACTIVE = require(ICON_BASE_URL + "league-inactive.png");
+export const PICKUP_INACTIVE = require(ICON_BASE_URL + "pickup-inactive.png");
+export const TROPHY_INACTIVE = require(ICON_BASE_URL + "trophy-inactive.png");
+export const PUCKS = require(ICON_BASE_URL + "pucks.png");
+export const DARKCOIN = require(ICON_BASE_URL + "dark-coins.png");
+export const CIRCLECHECK = require(ICON_BASE_URL + "check-circle.png");
+export const PICKUP = require(ICON_BASE_URL + "pickup_icon.png");
+export const PICKUP_COIN = require(ICON_BASE_URL + "pickupcoin.png");
+export const THUMB = require(ICON_BASE_URL + "thumbs-up.png");

@@ -1,0 +1,9 @@
+com/maedaanownerapp/MainActivity.java
+ com.rinkratsapp.MainActivity
+com/rinkratsapp/BuildConfig.java
+ com.rinkratsapp.BuildConfig
+com/maedaanownerapp/MainApplication.java
+ com.rinkratsapp.MainApplication
+ com.rinkratsapp.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

@@ -1,0 +1,6 @@
+module Pods_rinkrats {
+  umbrella header "Pods-rinkrats-umbrella.h"
+
+  export *
+  module * { export * }
+}

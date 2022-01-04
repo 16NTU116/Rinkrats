@@ -1,0 +1,97 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.rinkratsapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:4:5-67
+11-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:4:22-64
+12
+13    <queries>
+13-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:10:5-14:15
+14        <intent>
+14-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:9-13:18
+15            <action android:name="android.media.action.IMAGE_CAPTURE" />
+15-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:13-73
+15-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:21-70
+16        </intent>
+17    </queries>
+18
+19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+19-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:5-81
+19-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:22-78
+20
+21    <application
+21-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:6:5-24:19
+22        android:name="com.rinkratsapp.MainApplication"
+22-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:7:7-38
+23        android:allowBackup="false"
+23-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:11:7-34
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.1.0] /home/kiritotheblackswordsman/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/AndroidManifest.xml:24:18-86
+25        android:icon="@mipmap/ic_launcher"
+25-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:9:7-41
+26        android:label="@string/app_name"
+26-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:8:7-39
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:10:7-52
+28        android:theme="@style/AppTheme" >
+28-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:12:7-38
+29        <activity
+29-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:13:7-23:18
+30            android:name="com.rinkratsapp.MainActivity"
+30-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:14:9-37
+31            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+31-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:16:9-86
+32            android:label="@string/app_name"
+32-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:15:9-41
+33            android:launchMode="singleTask"
+33-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:17:9-40
+34            android:windowSoftInputMode="adjustResize" >
+34-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:18:9-51
+35            <intent-filter>
+35-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:19:9-22:25
+36                <action android:name="android.intent.action.MAIN" />
+36-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:20:13-65
+36-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:20:21-62
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:21:13-73
+38-->/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/src/main/AndroidManifest.xml:21:23-70
+39            </intent-filter>
+40        </activity>
+41
+42        <provider
+42-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:19:9-27:20
+43            android:name="androidx.core.content.FileProvider"
+43-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:20:13-62
+44            android:authorities="com.rinkratsapp.provider"
+44-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:21:13-60
+45            android:exported="false"
+45-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:22:13-37
+46            android:grantUriPermissions="true" >
+46-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:23:13-47
+47            <meta-data
+47-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:24:13-26:58
+48                android:name="android.support.FILE_PROVIDER_PATHS"
+48-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:25:17-67
+49                android:resource="@xml/provider_paths" />
+49-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:26:17-55
+50        </provider>
+51
+52        <activity
+52-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:29:9-31:72
+53            android:name="com.yalantis.ucrop.UCropActivity"
+53-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:30:13-60
+54            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+54-->[:react-native-image-crop-picker] /media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:31:13-69
+55    </application>
+56
+57</manifest>

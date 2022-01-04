@@ -1,0 +1,25 @@
+let Colors = {
+  prim1: "#DD0000",
+  prim2: "#00B4BF",
+  prim3: "#FDF2F2",
+  prim4: "#000814",
+  green: "#00CCDA",
+  greenDull: "rgba(0, 180, 191, 0.3);",
+  textColor: "#000D21",
+  textColorDull: "rgba(255, 255, 255, 0.3);",
+  textColorDullHome: "#A6AEB9",
+  notiTextColor: "#8F959D",
+  dull: "rgba(255, 255, 255, 0.15);",
+  redDull: "rgba(221, 0, 53, 0.3);",
+  white: "white",
+  lightRed: "#EE8080",
+  charcoal: "#212121",
+  lightcharcoal: "#36454F",
+  screenbackground: "#F9FAFB",
+  black: "black",
+  switchColor: "#00B4BF",
+  borderColor: "#E9EDF1",
+  redPrim: "#6D0000",
+};
+
+export default Colors;

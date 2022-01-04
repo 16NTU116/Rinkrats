@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rinkrats.iml" filepath="$PROJECT_DIR$/.idea/modules/rinkrats.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/rinkrats.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/rinkrats.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1644892329/rinkrats.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-1644892329/rinkrats.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1977729629/rinkrats.react-native-community_datetimepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/1977729629/rinkrats.react-native-community_datetimepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1413340388/rinkrats.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1413340388/rinkrats.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1369127785/rinkrats.react-native-image-crop-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1369127785/rinkrats.react-native-image-crop-picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-138329416/rinkrats.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-138329416/rinkrats.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1661815885/rinkrats.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/1661815885/rinkrats.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/209729701/rinkrats.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/209729701/rinkrats.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2099547010/rinkrats.react-native-svg.iml" filepath="$PROJECT_DIR$/.idea/modules/2099547010/rinkrats.react-native-svg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1393293966/rinkrats.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-1393293966/rinkrats.react-native-vector-icons.iml" />
+    </modules>
+  </component>
+</project>
