@@ -28,8 +28,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 function DrawerComponent({ navigation, route }) {
   // const user = useContext(UserStoreContext);
   return (
-    <View style={styles.container}>
-      <ScrollView>
+    <ScrollView>
+      <View style={styles.container}>
         <View
           style={{
             backgroundColor: "#000814",
@@ -178,8 +178,8 @@ function DrawerComponent({ navigation, route }) {
             </Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({

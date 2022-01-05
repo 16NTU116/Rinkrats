@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Text,
   TextInput,
-  Scroll
+  ScrollView,
 } from "react-native";
 import Colors from "../utils/colors";
 // import { TextInput, Button } from "react-native-paper";
@@ -160,307 +160,315 @@ const MainScreen = (props) => {
             </View>
 
             {signup && (
-              <View>
-                <TouchableOpacity
-                  style={{
-                    alignItems: "center",
-                    alignSelf: "center",
-                    backgroundColor: Colors.dull,
-                    marginHorizontal: 20,
-                    borderRadius: 2,
-                    width: SCREEN_WIDTH * 0.9,
-                    marginTop: SCREEN_HEIGHT * 0.1,
-                    padding: 16,
-                    flexDirection: "row",
-                    justifyContent: "center",
-                  }}
-                  // onPress={() => props.navigation.navigate("Login")}
-                >
-                  <Image source={require("../../assets/images/google.png")} />
+              <ScrollView>
+                <View>
+                  <TouchableOpacity
+                    style={{
+                      alignItems: "center",
+                      alignSelf: "center",
+                      backgroundColor: Colors.dull,
+                      marginHorizontal: 20,
+                      borderRadius: 2,
+                      width: SCREEN_WIDTH * 0.9,
+                      marginTop: SCREEN_HEIGHT * 0.1,
+                      padding: 16,
+                      flexDirection: "row",
+                      justifyContent: "center",
+                    }}
+                    // onPress={() => props.navigation.navigate("Login")}
+                  >
+                    <Image source={require("../../assets/images/google.png")} />
+                    <Text
+                      style={{
+                        fontFamily: "Nunito",
+                        fontSize: 16,
+                        fontWeight: "600",
+                        color: Colors.white,
+                        paddingLeft: 8,
+                      }}
+                    >
+                      SIGNUP WITH GOOGLE
+                    </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={{
+                      alignItems: "center",
+                      alignSelf: "center",
+                      backgroundColor: Colors.dull,
+                      marginHorizontal: 20,
+                      borderRadius: 2,
+                      width: SCREEN_WIDTH * 0.9,
+                      marginTop: 16,
+                      padding: 16,
+                      flexDirection: "row",
+                      justifyContent: "center",
+                    }}
+                    // onPress={() => props.navigation.navigate("Login")}
+                  >
+                    <Image
+                      source={require("../../assets/images/facebook.png")}
+                    />
+
+                    <Text
+                      style={{
+                        fontFamily: "Nunito",
+                        fontSize: 16,
+                        fontWeight: "600",
+                        color: Colors.white,
+                        paddingLeft: 8,
+                      }}
+                    >
+                      SIGNUP WITH FACEBOOK
+                    </Text>
+                  </TouchableOpacity>
+
                   <Text
                     style={{
                       fontFamily: "Nunito",
+                      fontSize: 14,
+                      color: Colors.dull,
+                      alignSelf: "center",
+                      marginTop: SCREEN_HEIGHT * 0.05,
+                      marginBottom: SCREEN_HEIGHT * 0.05,
+                    }}
+                  >
+                    OR
+                  </Text>
+
+                  <TextInput
+                    keyboardType="default"
+                    style={{
+                      margin: 10,
+                      padding: 16,
                       fontSize: 16,
-                      fontWeight: "600",
+                      backgroundColor: "transparent",
                       color: Colors.white,
-                      paddingLeft: 8,
+                      borderWidth: 1,
+                      borderColor: Colors.dull,
+                      width: SCREEN_WIDTH * 0.9,
+                      alignSelf: "center",
                     }}
-                  >
-                    SIGNUP WITH GOOGLE
-                  </Text>
-                </TouchableOpacity>
+                    placeholder="Email/Phone Number"
+                    placeholderTextColor={Colors.dull}
+                    value={name}
+                    onChangeText={(text) => setName(text)}
+                  />
 
-                <TouchableOpacity
-                  style={{
-                    alignItems: "center",
-                    alignSelf: "center",
-                    backgroundColor: Colors.dull,
-                    marginHorizontal: 20,
-                    borderRadius: 2,
-                    width: SCREEN_WIDTH * 0.9,
-                    marginTop: 16,
-                    padding: 16,
-                    flexDirection: "row",
-                    justifyContent: "center",
-                  }}
-                  // onPress={() => props.navigation.navigate("Login")}
-                >
-                  <Image source={require("../../assets/images/facebook.png")} />
-
-                  <Text
+                  <TextInput
+                    keyboardType="default"
                     style={{
-                      fontFamily: "Nunito",
+                      margin: 10,
+                      padding: 16,
                       fontSize: 16,
-                      fontWeight: "600",
+                      backgroundColor: "transparent",
                       color: Colors.white,
-                      paddingLeft: 8,
+                      borderWidth: 1,
+                      borderColor: Colors.dull,
+                      width: SCREEN_WIDTH * 0.9,
+                      alignSelf: "center",
                     }}
-                  >
-                    SIGNUP WITH FACEBOOK
-                  </Text>
-                </TouchableOpacity>
+                    placeholder="Password"
+                    placeholderTextColor={Colors.dull}
+                    value={password}
+                    secureTextEntry={true}
+                    onChangeText={(text) => setPassword(text)}
+                  />
 
-                <Text
-                  style={{
-                    fontFamily: "Nunito",
-                    fontSize: 14,
-                    color: Colors.dull,
-                    alignSelf: "center",
-                    marginTop: SCREEN_HEIGHT * 0.05,
-                    marginBottom: SCREEN_HEIGHT * 0.05,
-                  }}
-                >
-                  OR
-                </Text>
-
-                <TextInput
-                  keyboardType="default"
-                  style={{
-                    margin: 10,
-                    padding: 16,
-                    fontSize: 16,
-                    backgroundColor: "transparent",
-                    color: Colors.white,
-                    borderWidth: 1,
-                    borderColor: Colors.dull,
-                    width: SCREEN_WIDTH * 0.9,
-                    alignSelf: "center",
-                  }}
-                  placeholder="Email/Phone Number"
-                  placeholderTextColor={Colors.dull}
-                  value={name}
-                  onChangeText={(text) => setName(text)}
-                />
-
-                <TextInput
-                  keyboardType="default"
-                  style={{
-                    margin: 10,
-                    padding: 16,
-                    fontSize: 16,
-                    backgroundColor: "transparent",
-                    color: Colors.white,
-                    borderWidth: 1,
-                    borderColor: Colors.dull,
-                    width: SCREEN_WIDTH * 0.9,
-                    alignSelf: "center",
-                  }}
-                  placeholder="Password"
-                  placeholderTextColor={Colors.dull}
-                  value={password}
-                  secureTextEntry={true}
-                  onChangeText={(text) => setPassword(text)}
-                />
-
-                <TouchableOpacity
-                  style={{
-                    alignItems: "center",
-                    alignSelf: "center",
-                    backgroundColor:
-                      name.length < 1 ? Colors.redDull : Colors.prim1,
-                    marginHorizontal: 20,
-                    borderRadius: 2,
-                    width: SCREEN_WIDTH * 0.9,
-                    marginTop: SCREEN_HEIGHT * 0.1,
-                    padding: 16,
-                  }}
-                  onPress={() => {
-                    setSignup(false);
-                  }}
-                >
-                  <Text
+                  <TouchableOpacity
                     style={{
-                      fontFamily: "Nunito",
-                      fontSize: 16,
-                      color:
-                        name.length < 1 ? Colors.textColorDull : Colors.white,
+                      alignItems: "center",
+                      alignSelf: "center",
+                      backgroundColor:
+                        name.length < 1 ? Colors.redDull : Colors.prim1,
+                      marginHorizontal: 20,
+                      borderRadius: 2,
+                      width: SCREEN_WIDTH * 0.9,
+                      marginTop: SCREEN_HEIGHT * 0.1,
+                      padding: 16,
+                    }}
+                    onPress={() => {
+                      setSignup(false);
                     }}
                   >
-                    SIGNUP
-                  </Text>
-                </TouchableOpacity>
-              </View>
+                    <Text
+                      style={{
+                        fontFamily: "Nunito",
+                        fontSize: 16,
+                        color:
+                          name.length < 1 ? Colors.textColorDull : Colors.white,
+                      }}
+                    >
+                      SIGNUP
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </ScrollView>
             )}
 
             {!signup && (
-              <View>
-                <TouchableOpacity
-                  style={{
-                    alignItems: "center",
-                    alignSelf: "center",
-                    backgroundColor: Colors.dull,
-                    marginHorizontal: 20,
-                    borderRadius: 2,
-                    width: SCREEN_WIDTH * 0.9,
-                    marginTop: SCREEN_HEIGHT * 0.1,
-                    padding: 16,
-                    justifyContent: "center",
-                    flexDirection: "row",
-                  }}
-                  // onPress={() => props.navigation.navigate("Login")}
-                >
-                  <Image source={require("../../assets/images/google.png")} />
+              <ScrollView>
+                <View>
+                  <TouchableOpacity
+                    style={{
+                      alignItems: "center",
+                      alignSelf: "center",
+                      backgroundColor: Colors.dull,
+                      marginHorizontal: 20,
+                      borderRadius: 2,
+                      width: SCREEN_WIDTH * 0.9,
+                      marginTop: SCREEN_HEIGHT * 0.1,
+                      padding: 16,
+                      justifyContent: "center",
+                      flexDirection: "row",
+                    }}
+                    // onPress={() => props.navigation.navigate("Login")}
+                  >
+                    <Image source={require("../../assets/images/google.png")} />
+
+                    <Text
+                      style={{
+                        fontFamily: "Nunito",
+                        fontSize: 16,
+                        fontWeight: "600",
+                        color: Colors.white,
+                        paddingLeft: 8,
+                      }}
+                    >
+                      LOGIN WITH GOOGLE
+                    </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={{
+                      alignItems: "center",
+                      alignSelf: "center",
+                      backgroundColor: Colors.dull,
+                      marginHorizontal: 20,
+                      borderRadius: 2,
+                      width: SCREEN_WIDTH * 0.9,
+                      marginTop: 16,
+                      padding: 16,
+                      justifyContent: "center",
+                      flexDirection: "row",
+                    }}
+                    // onPress={() => props.navigation.navigate("Login")}
+                  >
+                    <Image
+                      source={require("../../assets/images/facebook.png")}
+                    />
+
+                    <Text
+                      style={{
+                        fontFamily: "Nunito",
+                        fontSize: 16,
+                        fontWeight: "600",
+                        color: Colors.white,
+                        paddingLeft: 8,
+                      }}
+                    >
+                      LOGIN WITH FACEBOOK
+                    </Text>
+                  </TouchableOpacity>
 
                   <Text
                     style={{
                       fontFamily: "Nunito",
+                      fontSize: 14,
+                      color: Colors.dull,
+                      alignSelf: "center",
+                      marginTop: SCREEN_HEIGHT * 0.05,
+                      marginBottom: SCREEN_HEIGHT * 0.05,
+                    }}
+                  >
+                    OR
+                  </Text>
+
+                  <TextInput
+                    keyboardType="default"
+                    style={{
+                      margin: 10,
+                      padding: 16,
                       fontSize: 16,
-                      fontWeight: "600",
+                      backgroundColor: "transparent",
                       color: Colors.white,
-                      paddingLeft: 8,
+                      borderWidth: 1,
+                      borderColor: Colors.dull,
+                      width: SCREEN_WIDTH * 0.9,
+                      alignSelf: "center",
                     }}
-                  >
-                    LOGIN WITH GOOGLE
-                  </Text>
-                </TouchableOpacity>
+                    placeholder="Email/Phone Number"
+                    placeholderTextColor={Colors.dull}
+                    value={name}
+                    onChangeText={(text) => setName(text)}
+                  />
 
-                <TouchableOpacity
-                  style={{
-                    alignItems: "center",
-                    alignSelf: "center",
-                    backgroundColor: Colors.dull,
-                    marginHorizontal: 20,
-                    borderRadius: 2,
-                    width: SCREEN_WIDTH * 0.9,
-                    marginTop: 16,
-                    padding: 16,
-                    justifyContent: "center",
-                    flexDirection: "row",
-                  }}
-                  // onPress={() => props.navigation.navigate("Login")}
-                >
-                  <Image source={require("../../assets/images/facebook.png")} />
-
-                  <Text
+                  <TextInput
+                    keyboardType="default"
                     style={{
-                      fontFamily: "Nunito",
+                      margin: 10,
+                      padding: 16,
                       fontSize: 16,
-                      fontWeight: "600",
+                      backgroundColor: "transparent",
                       color: Colors.white,
-                      paddingLeft: 8,
+                      borderWidth: 1,
+                      borderColor: Colors.dull,
+                      width: SCREEN_WIDTH * 0.9,
+                      alignSelf: "center",
                     }}
-                  >
-                    LOGIN WITH FACEBOOK
-                  </Text>
-                </TouchableOpacity>
+                    placeholder="Password"
+                    placeholderTextColor={Colors.dull}
+                    secureTextEntry
+                    value={password}
+                    onChangeText={(text) => setPassword(text)}
+                  />
 
-                <Text
-                  style={{
-                    fontFamily: "Nunito",
-                    fontSize: 14,
-                    color: Colors.dull,
-                    alignSelf: "center",
-                    marginTop: SCREEN_HEIGHT * 0.05,
-                    marginBottom: SCREEN_HEIGHT * 0.05,
-                  }}
-                >
-                  OR
-                </Text>
-
-                <TextInput
-                  keyboardType="default"
-                  style={{
-                    margin: 10,
-                    padding: 16,
-                    fontSize: 16,
-                    backgroundColor: "transparent",
-                    color: Colors.white,
-                    borderWidth: 1,
-                    borderColor: Colors.dull,
-                    width: SCREEN_WIDTH * 0.9,
-                    alignSelf: "center",
-                  }}
-                  placeholder="Email/Phone Number"
-                  placeholderTextColor={Colors.dull}
-                  value={name}
-                  onChangeText={(text) => setName(text)}
-                />
-
-                <TextInput
-                  keyboardType="default"
-                  style={{
-                    margin: 10,
-                    padding: 16,
-                    fontSize: 16,
-                    backgroundColor: "transparent",
-                    color: Colors.white,
-                    borderWidth: 1,
-                    borderColor: Colors.dull,
-                    width: SCREEN_WIDTH * 0.9,
-                    alignSelf: "center",
-                  }}
-                  placeholder="Password"
-                  placeholderTextColor={Colors.dull}
-                  secureTextEntry
-                  value={password}
-                  onChangeText={(text) => setPassword(text)}
-                />
-
-                <TouchableOpacity
-                  style={{
-                    alignItems: "center",
-                    alignSelf: "center",
-                  }}
-                  onPress={() => {
-                    props.navigation.navigate("ForgotPassword");
-                  }}
-                >
-                  <Text
+                  <TouchableOpacity
                     style={{
-                      marginTop: 4,
-                      color: "white",
+                      alignItems: "center",
+                      alignSelf: "center",
+                    }}
+                    onPress={() => {
+                      props.navigation.navigate("ForgotPassword");
                     }}
                   >
-                    Forgot Password?
-                  </Text>
-                </TouchableOpacity>
+                    <Text
+                      style={{
+                        marginTop: 4,
+                        color: "white",
+                      }}
+                    >
+                      Forgot Password?
+                    </Text>
+                  </TouchableOpacity>
 
-                <TouchableOpacity
-                  style={{
-                    alignItems: "center",
-                    alignSelf: "center",
-                    backgroundColor:
-                      name.length < 1 ? Colors.redDull : Colors.prim1,
-                    marginHorizontal: 20,
-                    borderRadius: 2,
-                    width: SCREEN_WIDTH * 0.9,
-                    marginTop: SCREEN_HEIGHT * 0.1,
-                    padding: 16,
-                  }}
-                  onPress={() => props.navigation.navigate("Home")}
-                >
-                  <Text
+                  <TouchableOpacity
                     style={{
-                      fontFamily: "Nunito",
-                      fontSize: 16,
-                      color:
-                        name.length < 1 ? Colors.textColorDull : Colors.white,
+                      alignItems: "center",
+                      alignSelf: "center",
+                      backgroundColor:
+                        name.length < 1 ? Colors.redDull : Colors.prim1,
+                      marginHorizontal: 20,
+                      borderRadius: 2,
+                      width: SCREEN_WIDTH * 0.9,
+                      marginTop: SCREEN_HEIGHT * 0.08,
+                      padding: 16,
                     }}
+                    onPress={() => props.navigation.navigate("Home")}
                   >
-                    LOGIN
-                  </Text>
-                </TouchableOpacity>
-              </View>
+                    <Text
+                      style={{
+                        fontFamily: "Nunito",
+                        fontSize: 16,
+                        color:
+                          name.length < 1 ? Colors.textColorDull : Colors.white,
+                      }}
+                    >
+                      LOGIN
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </ScrollView>
             )}
           </View>
         </View>

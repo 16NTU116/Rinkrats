@@ -29,6 +29,7 @@ import {
 // import { UserStoreContext } from "../store/UserStoreContext";
 import HomeHeader from "../../components/HomeHeader";
 import { ScrollView } from "react-native-gesture-handler";
+import Swipeout from "react-native-swipeout";
 
 const Notifications = (props) => {
   const [name, setName] = useState(null);
@@ -36,46 +37,55 @@ const Notifications = (props) => {
   const [signup, setSignup] = useState(true);
   const [visible, setVisible] = useState(false);
   const [markAllAsRead, setMarkAllAsRead] = useState(false);
-  const arrayForNew = [
+  const [backgroundColorValue, setBackgroundColorValue] = useState("white");
+
+  const [arrayForNew, setArrayForNew] = useState([
     {
       text: "Game joined successfully",
       time: "Just now",
       image: require("../../../assets/icons/check-circle.png"),
+      backgroundColorValue: "white",
     },
     {
       text: "New rink around your",
       time: "12 mins",
       image: require("../../../assets/icons/greenhockey.png"),
+      backgroundColorValue: "white",
     },
-  ];
+  ]);
 
-  const arrayForOld = [
+  const [arrayForOld, setArrayForOld] = useState([
     {
       text: "Rate the golie",
       time: "32 mins",
       image: require("../../../assets/icons/home-active.png"),
+      backgroundColorValue: "white",
     },
     {
       text: "Game joined successfully",
       time: "1 hr",
       image: require("../../../assets/icons/check-circle.png"),
+      backgroundColorValue: "white",
     },
     {
       text: "Give golie a tip",
       time: "1 hr",
       image: require("../../../assets/images/dollar.png"),
+      backgroundColorValue: "white",
     },
     {
       text: "New rink around your",
       time: "3 hr",
       image: require("../../../assets/icons/greenhockey.png"),
+      backgroundColorValue: "white",
     },
     {
       text: "Update your skills",
       time: "8 hr",
       image: require("../../../assets/icons/star.png"),
+      backgroundColorValue: "white",
     },
-  ];
+  ]);
 
   const openMenu = () => setVisible(true);
 
@@ -83,7 +93,7 @@ const Notifications = (props) => {
 
   useEffect(async () => {
     console.log("new hello");
-  });
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -186,7 +196,10 @@ const Notifications = (props) => {
                   padding: 12,
                   alignItems: "center",
                 }}
-                onPress={() => setMarkAllAsRead(true)}
+                onPress={() => {
+                  setMarkAllAsRead(true);
+                  setVisible(false);
+                }}
               >
                 <Ionicons
                   name="ios-refresh"
@@ -261,47 +274,94 @@ const Notifications = (props) => {
                   data={arrayForNew}
                   showsVerticalScrollIndicator={false}
                   keyExtractor={(item, index) => item.id}
-                  renderItem={({ item }) => (
-                    <View
+                  renderItem={({ item, index }) => (
+                    <Swipeout
+                      right={[
+                        {
+                          backgroundColor: "#fff",
+                          component: (
+                            <TouchableOpacity
+                              style={{
+                                alignItems: "center",
+                              }}
+                              // onPress={() => {
+                              //   let array = arrayForNew;
+                              //   array.filter((items) => {
+                              //     console.log("items: ", items.text);
+                              //     return items.text != item.text;
+                              //   });
+                              //   console.log("Log: ", array);
+                              // }}
+                            >
+                              <Text
+                                style={{
+                                  fontSize: 12,
+                                  fontWeight: "700",
+                                  color: "#DD0000",
+                                  textTransform: "uppercase",
+                                }}
+                              >
+                                Delete
+                              </Text>
+                            </TouchableOpacity>
+                          ),
+                        },
+                      ]}
+                      backgroundColor={item.backgroundColorValue}
                       style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
                         marginBottom: 26,
                       }}
+                      // onOpen={() => {
+                      //   let array = arrayForNew;
+                      //   array[index].backgroundColorValue = "#FDF2F2";
+                      //   setArrayForNew(array);
+                      // }}
+                      // onClose={() => {
+                      //   let array = arrayForNew;
+                      //   array[index].backgroundColorValue = "#fff";
+                      //   setArrayForNew(array);
+                      // }}
                     >
                       <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
                       >
-                        <Image
-                          source={item.image}
-                          style={{
-                            height: 15,
-                            width: 15,
-                            tintColor: markAllAsRead ? "gray" : "red",
-                          }}
-                        />
+                        <View
+                          style={{ flexDirection: "row", alignItems: "center" }}
+                        >
+                          <Image
+                            source={item.image}
+                            style={{
+                              height: 15,
+                              width: 15,
+                              tintColor: markAllAsRead ? "gray" : "red",
+                            }}
+                          />
+                          <Text
+                            style={{
+                              fontSize: 12,
+                              fontWeight: "700",
+                              paddingLeft: 11,
+                            }}
+                          >
+                            {item.text}
+                          </Text>
+                        </View>
+
                         <Text
                           style={{
                             fontSize: 12,
-                            fontWeight: "700",
-                            paddingLeft: 11,
+                            fontWeight: "400",
+                            color: markAllAsRead ? "gray" : "red",
                           }}
                         >
-                          {item.text}
+                          {item.time}
                         </Text>
                       </View>
-
-                      <Text
-                        style={{
-                          fontSize: 12,
-                          fontWeight: "400",
-                          color: markAllAsRead ? "gray" : "red",
-                        }}
-                      >
-                        {item.time}
-                      </Text>
-                    </View>
+                    </Swipeout>
                   )}
                 />
 
@@ -320,46 +380,75 @@ const Notifications = (props) => {
                   showsVerticalScrollIndicator={false}
                   keyExtractor={(item, index) => item.id}
                   renderItem={({ item }) => (
-                    <View
+                    <Swipeout
+                      right={[
+                        {
+                          backgroundColor: "#fff",
+                          component: (
+                            <TouchableOpacity
+                              style={{
+                                alignItems: "center",
+                              }}
+                            >
+                              <Text
+                                style={{
+                                  fontSize: 12,
+                                  fontWeight: "700",
+                                  color: "#DD0000",
+                                  textTransform: "uppercase",
+                                }}
+                              >
+                                Delete
+                              </Text>
+                            </TouchableOpacity>
+                          ),
+                        },
+                      ]}
+                      backgroundColor={item.backgroundColorValue}
                       style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
                         marginBottom: 26,
                       }}
                     >
                       <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
                       >
-                        <Image
-                          source={item.image}
-                          style={{
-                            height: 15,
-                            width: 15,
-                            tintColor: markAllAsRead ? "gray" : "red",
-                          }}
-                        />
+                        <View
+                          style={{ flexDirection: "row", alignItems: "center" }}
+                        >
+                          <Image
+                            source={item.image}
+                            style={{
+                              height: 15,
+                              width: 15,
+                              tintColor: markAllAsRead ? "gray" : "red",
+                            }}
+                          />
+                          <Text
+                            style={{
+                              fontSize: 12,
+                              fontWeight: "700",
+                              paddingLeft: 11,
+                            }}
+                          >
+                            {item.text}
+                          </Text>
+                        </View>
+
                         <Text
                           style={{
                             fontSize: 12,
-                            fontWeight: "700",
-                            paddingLeft: 11,
+                            fontWeight: "400",
+                            color: markAllAsRead ? "gray" : "red",
                           }}
                         >
-                          {item.text}
+                          {item.time}
                         </Text>
                       </View>
-
-                      <Text
-                        style={{
-                          fontSize: 12,
-                          fontWeight: "400",
-                          color: markAllAsRead ? "gray" : "red",
-                        }}
-                      >
-                        {item.time}
-                      </Text>
-                    </View>
+                    </Swipeout>
                   )}
                 />
               </View>
