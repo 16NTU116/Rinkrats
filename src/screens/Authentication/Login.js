@@ -26,8 +26,8 @@ const Login = observer((props) => {
   // }, [phoneNumber]);
 
   return (
-    <KeyboardAwareScrollView style={styles.container}>
-      <ScrollView style={{ marginHorizontal: 20 }}>
+    <ScrollView style={{ marginHorizontal: 20 }}>
+      <KeyboardAwareScrollView style={styles.container}>
         <View style={{ marginVertical: 0, alignSelf: "center" }}>
           <Image width={350} height={120} style={styles.logo} source={LOGO} />
         </View>
@@ -88,8 +88,8 @@ const Login = observer((props) => {
         >
           <Text style={{ textAlign: "center" }}>Forgot Password?</Text>
         </TouchableOpacity>
-      </ScrollView>
-    </KeyboardAwareScrollView>
+      </KeyboardAwareScrollView>
+    </ScrollView>
   );
 });
 

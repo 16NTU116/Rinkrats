@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Text,
   TextInput,
+  Scroll
 } from "react-native";
 import Colors from "../utils/colors";
 // import { TextInput, Button } from "react-native-paper";

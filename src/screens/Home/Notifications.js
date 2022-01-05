@@ -35,6 +35,47 @@ const Notifications = (props) => {
   const [password, setPassword] = useState(null);
   const [signup, setSignup] = useState(true);
   const [visible, setVisible] = useState(false);
+  const [markAllAsRead, setMarkAllAsRead] = useState(false);
+  const arrayForNew = [
+    {
+      text: "Game joined successfully",
+      time: "Just now",
+      image: require("../../../assets/icons/check-circle.png"),
+    },
+    {
+      text: "New rink around your",
+      time: "12 mins",
+      image: require("../../../assets/icons/greenhockey.png"),
+    },
+  ];
+
+  const arrayForOld = [
+    {
+      text: "Rate the golie",
+      time: "32 mins",
+      image: require("../../../assets/icons/home-active.png"),
+    },
+    {
+      text: "Game joined successfully",
+      time: "1 hr",
+      image: require("../../../assets/icons/check-circle.png"),
+    },
+    {
+      text: "Give golie a tip",
+      time: "1 hr",
+      image: require("../../../assets/images/dollar.png"),
+    },
+    {
+      text: "New rink around your",
+      time: "3 hr",
+      image: require("../../../assets/icons/greenhockey.png"),
+    },
+    {
+      text: "Update your skills",
+      time: "8 hr",
+      image: require("../../../assets/icons/star.png"),
+    },
+  ];
 
   const openMenu = () => setVisible(true);
 
@@ -84,16 +125,18 @@ const Notifications = (props) => {
                   alignItems: "center",
                 }}
               >
-                <Text
-                  style={{
-                    color: "white",
-                    fontSize: 10,
-                    fontWeight: "700",
-                    padding: 4,
-                  }}
-                >
-                  4
-                </Text>
+                {markAllAsRead ? null : (
+                  <Text
+                    style={{
+                      color: "white",
+                      fontSize: 10,
+                      fontWeight: "700",
+                      padding: 4,
+                    }}
+                  >
+                    4
+                  </Text>
+                )}
               </View>
             </View>
             {/* <Menu
@@ -137,12 +180,13 @@ const Notifications = (props) => {
                 zIndex: 2,
               }}
             >
-              <View
+              <TouchableOpacity
                 style={{
                   flexDirection: "row",
                   padding: 12,
                   alignItems: "center",
                 }}
+                onPress={() => setMarkAllAsRead(true)}
               >
                 <Ionicons
                   name="ios-refresh"
@@ -152,7 +196,7 @@ const Notifications = (props) => {
                 <Text style={{ color: "white", fontSize: 16, paddingLeft: 4 }}>
                   Mark all as read
                 </Text>
-              </View>
+              </TouchableOpacity>
               <View
                 style={{
                   flexDirection: "row",
@@ -211,22 +255,13 @@ const Notifications = (props) => {
                     marginBottom: 32,
                   }}
                 >
-                  New
+                  NEW
                 </Text>
                 <FlatList
-                  data={[
-                    "adsa",
-                    "dsa",
-                    "dsa",
-                    "dsa",
-                    "adsa",
-                    "dsa",
-                    "dsa",
-                    "dsa",
-                  ]}
+                  data={arrayForNew}
                   showsVerticalScrollIndicator={false}
                   keyExtractor={(item, index) => item.id}
-                  renderItem={() => (
+                  renderItem={({ item }) => (
                     <View
                       style={{
                         flexDirection: "row",
@@ -238,10 +273,13 @@ const Notifications = (props) => {
                       <View
                         style={{ flexDirection: "row", alignItems: "center" }}
                       >
-                        <Ionicons
-                          name="ios-star-outline"
-                          size={15}
-                          color={"red"}
+                        <Image
+                          source={item.image}
+                          style={{
+                            height: 15,
+                            width: 15,
+                            tintColor: markAllAsRead ? "gray" : "red",
+                          }}
                         />
                         <Text
                           style={{
@@ -250,7 +288,7 @@ const Notifications = (props) => {
                             paddingLeft: 11,
                           }}
                         >
-                          Update your skills
+                          {item.text}
                         </Text>
                       </View>
 
@@ -258,10 +296,10 @@ const Notifications = (props) => {
                         style={{
                           fontSize: 12,
                           fontWeight: "400",
-                          color: "red",
+                          color: markAllAsRead ? "gray" : "red",
                         }}
                       >
-                        Just now
+                        {item.time}
                       </Text>
                     </View>
                   )}
@@ -275,22 +313,13 @@ const Notifications = (props) => {
                     marginVertical: 32,
                   }}
                 >
-                  Old
+                  OLD
                 </Text>
                 <FlatList
-                  data={[
-                    "adsa",
-                    "dsa",
-                    "dsa",
-                    "dsa",
-                    "adsa",
-                    "dsa",
-                    "dsa",
-                    "dsa",
-                  ]}
+                  data={arrayForOld}
                   showsVerticalScrollIndicator={false}
                   keyExtractor={(item, index) => item.id}
-                  renderItem={() => (
+                  renderItem={({ item }) => (
                     <View
                       style={{
                         flexDirection: "row",
@@ -302,10 +331,13 @@ const Notifications = (props) => {
                       <View
                         style={{ flexDirection: "row", alignItems: "center" }}
                       >
-                        <Ionicons
-                          name="ios-star-outline"
-                          size={15}
-                          color={"red"}
+                        <Image
+                          source={item.image}
+                          style={{
+                            height: 15,
+                            width: 15,
+                            tintColor: markAllAsRead ? "gray" : "red",
+                          }}
                         />
                         <Text
                           style={{
@@ -314,7 +346,7 @@ const Notifications = (props) => {
                             paddingLeft: 11,
                           }}
                         >
-                          Update your skills
+                          {item.text}
                         </Text>
                       </View>
 
@@ -322,10 +354,10 @@ const Notifications = (props) => {
                         style={{
                           fontSize: 12,
                           fontWeight: "400",
-                          color: "red",
+                          color: markAllAsRead ? "gray" : "red",
                         }}
                       >
-                        32 mins
+                        {item.time}
                       </Text>
                     </View>
                   )}
