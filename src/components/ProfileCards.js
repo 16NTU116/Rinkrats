@@ -24,10 +24,29 @@ const ProfileCards = (props) => (
       paddingVertical: 22,
       paddingHorizontal: 32,
     }}
-    onPress={() => props.screen && props.navigation.navigate(props.screen)}
+    onPress={() => props.navigation.navigate(props.screen)}
   >
-    <Image source={props.icon} style={props.imageStyle} />
-    <Text style={{ fontSize: 12, fontWeight: "700", paddingTop: 5 }}>
+    <Image source={props.icon} />
+    {/* <Ionicons name={props.icon} color={Colors.notiTextColor} size={16} /> */}
+
+    <Text
+      style={{
+        fontSize: 12,
+        fontWeight: "700",
+        paddingTop: 5,
+        color: "black",
+      }}
+    >
+      {props.desc}
+    </Text>
+    <Text
+      style={{
+        fontSize: 12,
+        fontWeight: "400",
+        paddingTop: 5,
+        color: "gray",
+      }}
+    >
       {props.name}
     </Text>
   </TouchableOpacity>

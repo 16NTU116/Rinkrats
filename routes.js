@@ -1,5 +1,6 @@
 import React from "react";
 import "react-native-gesture-handler";
+import { TouchableOpacity, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
@@ -80,8 +81,11 @@ import RefundRequest from "./src/screens/Home/RefundRequest";
 import UpdateYourSkills from "./src/screens/Home/UpdateYourSkills";
 import SelectPaymentModes from "./src/screens/Home/SelectPaymentModes";
 
+import RateYourself from "./src/screens/Home/RateYourself";
 import Tournament from "./src/screens/Tournament/Tournament";
-
+import PeerRating from "./src/screens/Home/PeerRating";
+import YourLevel from "./src/screens/Home/YourLevel";
+import YourSkills from "./src/screens/Home/YourSkills";
 import {
   HOME_ACTIVE,
   LEAGUE_INACTIVE,
@@ -404,6 +408,24 @@ const HomeStack = ({ navigation, route }) => {
       <Stack.Screen
         name="History"
         component={History}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="YourSkills"
+        component={YourSkills}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="YourLevel"
+        component={YourLevel}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="PeerRating"
+        component={PeerRating}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
