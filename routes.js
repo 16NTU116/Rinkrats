@@ -1,5 +1,6 @@
 import React from "react";
 import "react-native-gesture-handler";
+import { TouchableOpacity, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
@@ -72,14 +73,16 @@ import Score from "./src/screens/League/Score";
 import Coach from "./src/screens/League/Coach";
 import Messages from "./src/screens/Home/Messages";
 import Chat from "./src/screens/Home/Chat";
-
+import RateYourself from "./src/screens/Home/RateYourself";
 import Tournament from "./src/screens/Tournament/Tournament";
-
+import PeerRating from "./src/screens/Home/PeerRating";
+import YourLevel from "./src/screens/Home/YourLevel";
+import YourSkills from "./src/screens/Home/YourSkills";
 import {
-  HOME_ACTIVE,
-  LEAGUE_INACTIVE,
-  PICKUP_INACTIVE,
-  TROPHY_INACTIVE,
+     HOME_ACTIVE,
+     LEAGUE_INACTIVE,
+     PICKUP_INACTIVE,
+     TROPHY_INACTIVE,
 } from "./src/utils/Constants";
 
 const Stack = createStackNavigator();
@@ -88,515 +91,541 @@ const TopTab = createMaterialTopTabNavigator();
 const Drawer = createDrawerNavigator();
 
 const AuthStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="Splash"
-      component={Splash}
-      options={{
-        headerShown: false,
-      }}
-    />
-    {/* <Stack.Screen
+     <Stack.Navigator>
+          <Stack.Screen
+               name="Splash"
+               component={Splash}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          {/* <Stack.Screen
       name="Messages"
       component={Messages}
       options={{ headerShown: false }}
     /> */}
-    <Stack.Screen
-      name="Welcome"
-      component={Welcome}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="MainScreen"
-      component={MainScreen}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="ForgotPassword"
-      component={ForgotPassword}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="VerifyCode"
-      component={VerifyCode}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="ResetPassword"
-      component={ResetPassword}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="PasswordUpdated"
-      component={PasswordUpdated}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="UserRole"
-      component={UserRole}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="Home"
-      component={DrawerStack}
-      options={{
-        headerShown: false,
-      }}
-    />
-  </Stack.Navigator>
+          <Stack.Screen
+               name="Welcome"
+               component={Welcome}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          <Stack.Screen
+               name="MainScreen"
+               component={MainScreen}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          <Stack.Screen
+               name="ForgotPassword"
+               component={ForgotPassword}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          <Stack.Screen
+               name="RateYourself"
+               component={RateYourself}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          <Stack.Screen
+               name="VerifyCode"
+               component={VerifyCode}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          <Stack.Screen
+               name="ResetPassword"
+               component={ResetPassword}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          <Stack.Screen
+               name="PasswordUpdated"
+               component={PasswordUpdated}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          <Stack.Screen
+               name="UserRole"
+               component={UserRole}
+               options={{
+                    headerShown: false,
+               }}
+          />
+          <Stack.Screen
+               name="Home"
+               component={DrawerStack}
+               options={{
+                    headerShown: false,
+               }}
+          />
+     </Stack.Navigator>
 );
 
 const HomeTabs = () => {
-  return (
-    <BottomTab.Navigator
-      tabBarOptions={{
-        inactiveTintColor: "black",
-        indicatorStyle: {
-          width: "100%",
-          left: "16%",
-          height: 30,
-          backgroundColor: "white",
-        },
-        activeTintColor: Colors.prim1,
-        labelStyle: {
-          fontSize: 12,
-        },
-        style: {
-          backgroundColor: "white",
-          borderBottomColor: Colors.prim1,
-        },
-      }}
-    >
-      <BottomTab.Screen
-        name="HomeStack"
-        component={HomeStack}
-        options={({ route }) => ({
-          tabBarLabel: "Home",
-          // tabBarVisible: route.state.index > 0 ? false : true,
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Image source={HOME_ACTIVE} />
-            ) : (
-              <Ionicons name="ios-home-outline" size={20} color="gray" />
-            ),
-        })}
-      />
-      <BottomTab.Screen
-        name="LeagueStack"
-        component={LeagueStack}
-        options={({ route }) => ({
-          tabBarLabel: "League",
-          // tabBarVisible: route.state.index > 0 ? false : true,
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Image source={LEAGUE_INACTIVE} />
-            ) : (
-              <Image source={LEAGUE_INACTIVE} />
-            ),
-        })}
-      />
-      <BottomTab.Screen
-        name="PickupStack"
-        component={PickUpStack}
-        options={({ route }) => ({
-          tabBarLabel: "Pickup",
-          // tabBarVisible: route.state.index > 0 ? false : true,
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Image source={PICKUP_INACTIVE} />
-            ) : (
-              <Image source={PICKUP_INACTIVE} />
-            ),
-        })}
-      />
-      <BottomTab.Screen
-        name="TournamentStack"
-        component={TournamentStack}
-        options={({ route }) => ({
-          tabBarLabel: "Tournament",
-          // tabBarVisible: route.state.index > 0 ? false : true,
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Image source={TROPHY_INACTIVE} />
-            ) : (
-              <Image source={TROPHY_INACTIVE} />
-            ),
-        })}
-      />
-    </BottomTab.Navigator>
-  );
+     return (
+          <BottomTab.Navigator
+               tabBarOptions={{
+                    inactiveTintColor: "black",
+                    indicatorStyle: {
+                         width: "100%",
+                         left: "16%",
+                         height: 30,
+                         backgroundColor: "white",
+                    },
+                    activeTintColor: Colors.prim1,
+                    labelStyle: {
+                         fontSize: 12,
+                    },
+                    style: {
+                         backgroundColor: "white",
+                         borderBottomColor: Colors.prim1,
+                    },
+               }}
+          >
+               <BottomTab.Screen
+                    name="HomeStack"
+                    component={HomeStack}
+                    options={({ route }) => ({
+                         tabBarLabel: "Home",
+                         // tabBarVisible: route.state.index > 0 ? false : true,
+                         tabBarIcon: ({ focused }) =>
+                              focused ? (
+                                   <Image source={HOME_ACTIVE} />
+                              ) : (
+                                   <Ionicons
+                                        name="ios-home-outline"
+                                        size={20}
+                                        color="gray"
+                                   />
+                              ),
+                    })}
+               />
+               <BottomTab.Screen
+                    name="LeagueStack"
+                    component={LeagueStack}
+                    options={({ route }) => ({
+                         tabBarLabel: "League",
+                         // tabBarVisible: route.state.index > 0 ? false : true,
+                         tabBarIcon: ({ focused }) =>
+                              focused ? (
+                                   <Image source={LEAGUE_INACTIVE} />
+                              ) : (
+                                   <Image source={LEAGUE_INACTIVE} />
+                              ),
+                    })}
+               />
+               <BottomTab.Screen
+                    name="PickupStack"
+                    component={PickUpStack}
+                    options={({ route }) => ({
+                         tabBarLabel: "Pickup",
+                         // tabBarVisible: route.state.index > 0 ? false : true,
+                         tabBarIcon: ({ focused }) =>
+                              focused ? (
+                                   <Image source={PICKUP_INACTIVE} />
+                              ) : (
+                                   <Image source={PICKUP_INACTIVE} />
+                              ),
+                    })}
+               />
+               <BottomTab.Screen
+                    name="TournamentStack"
+                    component={TournamentStack}
+                    options={({ route }) => ({
+                         tabBarLabel: "Tournament",
+                         // tabBarVisible: route.state.index > 0 ? false : true,
+                         tabBarIcon: ({ focused }) =>
+                              focused ? (
+                                   <Image source={TROPHY_INACTIVE} />
+                              ) : (
+                                   <Image source={TROPHY_INACTIVE} />
+                              ),
+                    })}
+               />
+          </BottomTab.Navigator>
+     );
 };
 
 const HomeStack = ({ navigation, route }) => {
-  if (route.state && route.state.index > 0) {
-    navigation.setOptions({ tabBarVisible: false });
-  } else {
-    navigation.setOptions({ tabBarVisible: true });
-  }
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="PuckDetails"
-        component={PuckDetails}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="PaymentHistory"
-        component={PaymentHistory}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="PaymentModes"
-        component={PaymentModes}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="PurchasedPucks"
-        component={PurchasedPucks}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="PaymentSuccessful"
-        component={PaymentSuccessful}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Messages"
-        component={Messages}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Chat"
-        component={Chat}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="AppSettings"
-        component={AppSettings}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Profile"
-        component={Profile}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Payments"
-        component={Payments}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="ChangePassword"
-        component={ChangePassword}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Forgot"
-        component={Forgot}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="NewPass"
-        component={NewPass}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="About"
-        component={About}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Legal"
-        component={Legal}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="General"
-        component={General}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="RoleTypes"
-        component={RoleTypes}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Skills"
-        component={Skills}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Experience"
-        component={Experience}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Position"
-        component={Position}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Stats"
-        component={Stats}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="History"
-        component={History}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
+     if (route.state && route.state.index > 0) {
+          navigation.setOptions({ tabBarVisible: false });
+     } else {
+          navigation.setOptions({ tabBarVisible: true });
+     }
+     return (
+          <Stack.Navigator>
+               <Stack.Screen
+                    name="Home"
+                    component={Home}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="YourSkills"
+                    component={YourSkills}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PuckDetails"
+                    component={PuckDetails}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="YourLevel"
+                    component={YourLevel}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PaymentHistory"
+                    component={PaymentHistory}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PeerRating"
+                    component={PeerRating}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PaymentModes"
+                    component={PaymentModes}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PurchasedPucks"
+                    component={PurchasedPucks}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PaymentSuccessful"
+                    component={PaymentSuccessful}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Notifications"
+                    component={Notifications}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Messages"
+                    component={Messages}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Chat"
+                    component={Chat}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="AppSettings"
+                    component={AppSettings}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Profile"
+                    component={Profile}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Payments"
+                    component={Payments}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="ChangePassword"
+                    component={ChangePassword}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Forgot"
+                    component={Forgot}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="NewPass"
+                    component={NewPass}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="About"
+                    component={About}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Legal"
+                    component={Legal}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="General"
+                    component={General}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="RoleTypes"
+                    component={RoleTypes}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Skills"
+                    component={Skills}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Experience"
+                    component={Experience}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Position"
+                    component={Position}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Stats"
+                    component={Stats}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="History"
+                    component={History}
+                    options={{ headerShown: false }}
+               />
+          </Stack.Navigator>
+     );
 };
 
 const PickUpStack = ({ navigation, route }) => {
-  if (route.state && route.state.index > 0) {
-    navigation.setOptions({ tabBarVisible: false });
-  } else {
-    navigation.setOptions({ tabBarVisible: true });
-  }
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Pickup"
-        component={Pickup}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="SelectDate"
-        component={SelectDate}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="SelectRink"
-        component={SelectRink}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="PickupGame"
-        component={PickupGame}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="SuccessInvite"
-        component={SuccessInvite}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="JoinGame"
-        component={JoinGame}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="UpdateSkills"
-        component={UpdateSkills}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Success"
-        component={Success}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Paying"
-        component={Paying}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="PlacingYou"
-        component={PlacingYou}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="PaymentPay"
-        component={PaymentPay}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
+     if (route.state && route.state.index > 0) {
+          navigation.setOptions({ tabBarVisible: false });
+     } else {
+          navigation.setOptions({ tabBarVisible: true });
+     }
+     return (
+          <Stack.Navigator>
+               <Stack.Screen
+                    name="Pickup"
+                    component={Pickup}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="SelectDate"
+                    component={SelectDate}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="SelectRink"
+                    component={SelectRink}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PickupGame"
+                    component={PickupGame}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="SuccessInvite"
+                    component={SuccessInvite}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="JoinGame"
+                    component={JoinGame}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="UpdateSkills"
+                    component={UpdateSkills}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Success"
+                    component={Success}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Paying"
+                    component={Paying}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PlacingYou"
+                    component={PlacingYou}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="PaymentPay"
+                    component={PaymentPay}
+                    options={{ headerShown: false }}
+               />
+          </Stack.Navigator>
+     );
 };
 
 const LeagueStack = ({ navigation, route }) => {
-  if (route.state && route.state.index > 0) {
-    navigation.setOptions({ tabBarVisible: false });
-  } else {
-    navigation.setOptions({ tabBarVisible: true });
-  }
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="League"
-        component={League}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Subins"
-        component={Subins}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Game"
-        component={Game}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Join2"
-        component={Join2}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="RequestSent"
-        component={RequestSent}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Teams"
-        component={Teams}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="TeamProfile"
-        component={TeamProfile}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Join3"
-        component={Join3}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="TeamJoinRequest"
-        component={TeamJoinRequest}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="LeagueManager"
-        component={LeagueManager}
-        component={LeagueManager}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="CreateLeague"
-        component={CreateLeague}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="DateRange"
-        component={DateRange}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="ScoreKeeper"
-        component={ScoreKeeper}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Coach"
-        component={Coach}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Score"
-        component={Score}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
+     if (route.state && route.state.index > 0) {
+          navigation.setOptions({ tabBarVisible: false });
+     } else {
+          navigation.setOptions({ tabBarVisible: true });
+     }
+     return (
+          <Stack.Navigator>
+               <Stack.Screen
+                    name="League"
+                    component={League}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Subins"
+                    component={Subins}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Game"
+                    component={Game}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Join2"
+                    component={Join2}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="RequestSent"
+                    component={RequestSent}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Teams"
+                    component={Teams}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="TeamProfile"
+                    component={TeamProfile}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Join3"
+                    component={Join3}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="TeamJoinRequest"
+                    component={TeamJoinRequest}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="LeagueManager"
+                    component={LeagueManager}
+                    component={LeagueManager}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="CreateLeague"
+                    component={CreateLeague}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="DateRange"
+                    component={DateRange}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="ScoreKeeper"
+                    component={ScoreKeeper}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Coach"
+                    component={Coach}
+                    options={{ headerShown: false }}
+               />
+               <Stack.Screen
+                    name="Score"
+                    component={Score}
+                    options={{ headerShown: false }}
+               />
+          </Stack.Navigator>
+     );
 };
 
 const TournamentStack = ({ navigation, route }) => {
-  if (route.state && route.state.index > 0) {
-    navigation.setOptions({ tabBarVisible: false });
-  } else {
-    navigation.setOptions({ tabBarVisible: true });
-  }
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Tournament"
-        component={Tournament}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
+     if (route.state && route.state.index > 0) {
+          navigation.setOptions({ tabBarVisible: false });
+     } else {
+          navigation.setOptions({ tabBarVisible: true });
+     }
+     return (
+          <Stack.Navigator>
+               <Stack.Screen
+                    name="Tournament"
+                    component={Tournament}
+                    options={{ headerShown: false }}
+               />
+          </Stack.Navigator>
+     );
 };
 const OnboardingStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="Splash"
-      component={Splash}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Welcome"
-      component={Welcome}
-      options={{ headerShown: false }}
-    />
+     <Stack.Navigator>
+          <Stack.Screen
+               name="Splash"
+               component={Splash}
+               options={{ headerShown: false }}
+          />
+          <Stack.Screen
+               name="Welcome"
+               component={Welcome}
+               options={{ headerShown: false }}
+          />
 
-    <Stack.Screen
-      name="MainScreen"
-      component={MainScreen}
-      options={{ headerShown: false }}
-    />
-  </Stack.Navigator>
+          <Stack.Screen
+               name="MainScreen"
+               component={MainScreen}
+               options={{ headerShown: false }}
+          />
+     </Stack.Navigator>
 );
 
 const DrawerStack = ({ navigation, route }) => {
-  return (
-    <Drawer.Navigator
-      initialRouteName="Home"
-      drawerPosition="right"
-      drawerContent={(props) => <DrawerComponent {...props} />}
-    >
-      <Drawer.Screen name="Home" component={HomeTabs} />
-    </Drawer.Navigator>
-  );
+     return (
+          <Drawer.Navigator
+               initialRouteName="Home"
+               drawerPosition="right"
+               drawerContent={(props) => <DrawerComponent {...props} />}
+          >
+               <Drawer.Screen name="Home" component={HomeTabs} />
+          </Drawer.Navigator>
+     );
 };
 
 const TestStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="SignupInfo"
-      component={PuckDetails}
-      options={{
-        headerShown: false,
-      }}
-    />
-  </Stack.Navigator>
+     <Stack.Navigator>
+          <Stack.Screen
+               name="SignupInfo"
+               component={PuckDetails}
+               options={{
+                    headerShown: false,
+               }}
+          />
+     </Stack.Navigator>
 );
 
 export default createAppContainer(
-  createSwitchNavigator(
-    {
-      Auth: AuthStack,
-      Home: HomeStack,
-    },
-    {
-      initialRouteName: "Auth",
-    }
-  )
+     createSwitchNavigator(
+          {
+               Auth: AuthStack,
+               Home: HomeStack,
+          },
+          {
+               initialRouteName: "Auth",
+          }
+     )
 );

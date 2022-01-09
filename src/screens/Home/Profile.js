@@ -41,41 +41,49 @@ const Profile = (props) => {
                name: "General",
                icon: require("../../../assets/icons/user1.png"),
                screen: "General",
+               desc: "john@silva.com",
           },
           {
                name: "Role",
                icon: require("../../../assets/icons/grid.png"),
                screen: "RoleTypes",
+               desc: "captain",
           },
           {
                name: "Skills",
                icon: require("../../../assets/icons/star.png"),
                screen: "Skills",
+               desc: "4.5/5 svg",
           },
           {
                name: "Experience",
                icon: require("../../../assets/icons/growth.png"),
                screen: "Experience",
+               desc: "72 games",
           },
           {
                name: "Position",
                icon: require("../../../assets/icons/arrowhor.png"),
                screen: "Position",
+               desc: "Left Wing",
           },
           {
                name: "Stats",
                icon: require("../../../assets/icons/bar.png"),
                screen: "Stats",
+               desc: "72% wins",
           },
           {
                name: "Friends",
                icon: require("../../../assets/icons/usercheck.png"),
-               screen: "Friends",
+               screen: "Messages",
+               desc: "17",
           },
           {
                name: "History",
                icon: require("../../../assets/icons/time.png"),
                screen: "History",
+               desc: "Last played - 15 days",
           },
      ];
      useEffect(async () => {
@@ -115,7 +123,7 @@ const Profile = (props) => {
                                         paddingLeft: 12,
                                    }}
                               >
-                                   t
+                                   My Profile
                               </Text>
                          </View>
                          <Ionicons
@@ -419,6 +427,7 @@ const Profile = (props) => {
                     </ImageBackground>
                     <FlatList
                          data={array}
+                         nestedScrollEnabled={true}
                          key={"_"}
                          numColumns={2}
                          ItemSeparatorComponent={() => {
@@ -440,6 +449,7 @@ const Profile = (props) => {
                                              icon={item.icon}
                                              screen={item.screen}
                                              navigation={props.navigation}
+                                             desc={item.desc}
                                         />
                                    </View>
                               );

@@ -29,6 +29,9 @@ import AuthText from "../../components/AuthText";
 
 const ChangePassword = (props) => {
      const [name, setName] = useState("");
+     const [oldPassword, setOldPassword] = useState();
+     const [newPassword, setNewPassword] = useState();
+     const [confirmNewPassword, setConfirmNewPassword] = useState();
      const [show, setShow] = useState(false);
      useEffect(async () => {
           console.log("new hello");
@@ -70,37 +73,41 @@ const ChangePassword = (props) => {
                >
                     <Text>Enter your old password </Text>
 
-                    <TextInput
-                         keyboardType="default"
+                    <View
                          style={{
-                              margin: 10,
-                              padding: 16,
-                              fontSize: 16,
-                              backgroundColor: "transparent",
-                              borderRadius: 5,
-                              color: Colors.dull,
-                              borderWidth: 1,
-                              borderColor: Colors.notiTextColor,
-                              width: SCREEN_WIDTH * 0.9,
+                              flexDirection: "row",
+                              width: "100%",
                               alignSelf: "center",
-                              marginTop: normalize(8),
+                              borderColor: Colors.notiTextColor,
+                              borderWidth: 1,
+                              borderRadius: 5,
+                              backgroundColor: "transparent",
+                              justifyContent: "space-between",
+                              paddingVertical: 5,
+                              alignItems: "center",
+                              paddingHorizontal: 5,
+                              marginVertical: 10,
                          }}
-                         placeholder="Old Password"
-                         secureTextEntry
-                         placeholderTextColor={Colors.notiTextColor}
-                         value={name}
-                         onChangeText={(text) => setName(text)}
-                    />
-                    <Ionicons
-                         name="ios-eye-off-outline"
-                         color="gray"
-                         size={25}
-                         style={{
-                              position: "absolute",
-                              right: 10,
-                              top: normalize(45),
-                         }}
-                    />
+                    >
+                         <TextInput
+                              keyboardType="default"
+                              style={{
+                                   fontSize: 16,
+                                   color: "black",
+                              }}
+                              placeholder="Old Password"
+                              secureTextEntry
+                              placeholderTextColor={Colors.notiTextColor}
+                              value={confirmNewPassword}
+                              onChangeText={(text) => setOldPassword(text)}
+                         />
+                         <Ionicons
+                              name="ios-eye-off-outline"
+                              color="gray"
+                              size={25}
+                         />
+                    </View>
+
                     <TouchableOpacity
                          onPress={() => props.navigation.navigate("Forgot")}
                     >
@@ -116,69 +123,75 @@ const ChangePassword = (props) => {
                     </TouchableOpacity>
                     <Text>Enter a new password </Text>
 
-                    <TextInput
-                         keyboardType="default"
+                    <View
                          style={{
-                              margin: 10,
-                              padding: 16,
-                              fontSize: 16,
-                              backgroundColor: "transparent",
-                              borderRadius: 5,
-                              color: Colors.dull,
-                              borderWidth: 1,
-                              borderColor: Colors.notiTextColor,
-                              width: SCREEN_WIDTH * 0.9,
+                              flexDirection: "row",
+                              width: "100%",
                               alignSelf: "center",
-                              marginTop: normalize(8),
-                         }}
-                         placeholder="New Password"
-                         secureTextEntry
-                         placeholderTextColor={Colors.notiTextColor}
-                         value={name}
-                         onChangeText={(text) => setName(text)}
-                    />
-                    <Ionicons
-                         name="ios-eye-off-outline"
-                         color="gray"
-                         size={25}
-                         style={{
-                              position: "absolute",
-                              right: 10,
-                              top: normalize(145),
-                         }}
-                    />
-
-                    <TextInput
-                         keyboardType="default"
-                         style={{
-                              margin: 10,
-                              padding: 16,
-                              fontSize: 16,
-                              backgroundColor: "transparent",
-                              borderRadius: 5,
-                              color: Colors.dull,
-                              borderWidth: 1,
                               borderColor: Colors.notiTextColor,
-                              width: SCREEN_WIDTH * 0.9,
-                              alignSelf: "center",
-                              marginTop: normalize(8),
+                              borderWidth: 1,
+                              borderRadius: 5,
+                              backgroundColor: "transparent",
+                              justifyContent: "space-between",
+                              paddingVertical: 5,
+                              alignItems: "center",
+                              paddingHorizontal: 5,
+                              marginVertical: 10,
                          }}
-                         placeholder="Confirm Password"
-                         secureTextEntry
-                         placeholderTextColor={Colors.notiTextColor}
-                         value={name}
-                         onChangeText={(text) => setName(text)}
-                    />
-                    <Ionicons
-                         name="ios-eye-off-outline"
-                         color="gray"
-                         size={25}
+                    >
+                         <TextInput
+                              keyboardType="default"
+                              style={{
+                                   fontSize: 16,
+                                   color: "black",
+                              }}
+                              placeholder="New Password"
+                              secureTextEntry
+                              placeholderTextColor={Colors.notiTextColor}
+                              value={confirmNewPassword}
+                              onChangeText={(text) => setNewPassword(text)}
+                         />
+                         <Ionicons
+                              name="ios-eye-off-outline"
+                              color="gray"
+                              size={25}
+                         />
+                    </View>
+                    <View
                          style={{
-                              position: "absolute",
-                              right: 10,
-                              top: normalize(220),
+                              flexDirection: "row",
+                              width: "100%",
+                              alignSelf: "center",
+                              borderColor: Colors.notiTextColor,
+                              borderWidth: 1,
+                              borderRadius: 5,
+                              backgroundColor: "transparent",
+                              justifyContent: "space-between",
+                              paddingVertical: 5,
+                              alignItems: "center",
+                              paddingHorizontal: 5,
                          }}
-                    />
+                    >
+                         <TextInput
+                              keyboardType="default"
+                              style={{
+                                   fontSize: 16,
+                                   color: "black",
+                              }}
+                              placeholder="Confirm Password"
+                              secureTextEntry
+                              placeholderTextColor={Colors.notiTextColor}
+                              value={confirmNewPassword}
+                              onChangeText={(text) =>
+                                   setConfirmNewPassword(text)
+                              }
+                         />
+                         <Ionicons
+                              name="ios-eye-off-outline"
+                              color="gray"
+                              size={25}
+                         />
+                    </View>
                     <TouchableOpacity
                          style={{
                               alignItems: "center",
