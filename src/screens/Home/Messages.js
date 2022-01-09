@@ -52,6 +52,8 @@ const Messages = (props) => {
   const [showRequests, setShowRequests] = useState(false);
   const [showSendRequests, setShowSendRequests] = useState(false);
   const [showPuck, setShowPuck] = useState(false);
+  const [block, setBlock] = useState(false);
+
   const openMenu = () => setVisible(true);
 
   const closeMenu = () => setVisible(false);
@@ -67,6 +69,7 @@ const Messages = (props) => {
               alignItems: "center",
               justifyContent: "space-between",
               marginHorizontal: 12,
+              paddingTop: 14,
               paddingBottom: 14,
             }}
           >
@@ -89,12 +92,22 @@ const Messages = (props) => {
               </Text>
             </View>
             <View style={{ flexDirection: "row" }}>
-              <TouchableOpacity
-                style={{ marginRight: 10 }}
-                onPress={() => setShowPuck(true)}
-              >
-                <Feather name="edit" color={"black"} size={20} />
-              </TouchableOpacity>
+              {checkInbox && (
+                <TouchableOpacity
+                  style={{ marginRight: 10 }}
+                  onPress={() => setShowPuck(true)}
+                >
+                  <Feather name="edit" color={"black"} size={20} />
+                </TouchableOpacity>
+              )}
+              {checkFriends && (
+                <TouchableOpacity
+                  style={{ marginRight: 10 }}
+                  onPress={() => props.navigation.navigate("AddFriends")}
+                >
+                  <Feather name="user-plus" color={"black"} size={20} />
+                </TouchableOpacity>
+              )}
               {/* <Menu
 					style={{ backgroundColor: "#000814", padding: 0 }}
 					visible={visible}
@@ -384,7 +397,7 @@ const Messages = (props) => {
                   renderItem={({ item }) => {
                     return (
                       <View>
-                        <FriendsComponent />
+                        <FriendsComponent block={block} />
                       </View>
                     );
                   }}
@@ -559,7 +572,7 @@ const Messages = (props) => {
                 >
                   <ScrollBottomSheet
                     componentType="FlatList"
-                    snapPoints={["50%", "0%", "50%"]}
+                    snapPoints={["40%", "0%", "40%"]}
                     initialSnapIndex={2}
                     renderHandle={() => (
                       <View
@@ -686,6 +699,9 @@ const Messages = (props) => {
                                   borderWidth: 0.5,
                                   marginHorizontal: 5,
                                 }}
+                                onPress={() => {
+                                  setShowRequests(false);
+                                }}
                               >
                                 <Feather
                                   name={"check"}
@@ -700,6 +716,10 @@ const Messages = (props) => {
                                   borderColor: "graylight",
                                   borderWidth: 0.5,
                                   marginHorizontal: 5,
+                                }}
+                                onPress={() => {
+                                  setBlock(true);
+                                  setShowRequests(false);
                                 }}
                               >
                                 <Ionicons
@@ -730,7 +750,7 @@ const Messages = (props) => {
                 >
                   <ScrollBottomSheet
                     componentType="FlatList"
-                    snapPoints={["50%", "0%", "50%"]}
+                    snapPoints={["40%", "0%", "40%"]}
                     initialSnapIndex={2}
                     renderHandle={() => (
                       <View
@@ -872,61 +892,6 @@ const Messages = (props) => {
                   />
                 </View>
               )}
-
-              {/* <Text
-                style={{
-                  color: Colors.notiTextColor,
-                  fontSize: 12,
-                  fontWeight: "500",
-                  marginVertical: 32,
-                }}
-              >
-                Old
-              </Text>
-              <FlatList
-                data={["adsa", "dsa", "dsa", "dsa"]}
-                showsVerticalScrollIndicator={false}
-                keyExtractor={(item, index) => item.id}
-                renderItem={() => (
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      marginBottom: 26,
-                    }}
-                  >
-                    <View
-                      style={{ flexDirection: "row", alignItems: "center" }}
-                    >
-                      <Ionicons
-                        name="ios-star-outline"
-                        size={15}
-                        color={"red"}
-                      />
-                      <Text
-                        style={{
-                          fontSize: 12,
-                          fontWeight: "700",
-                          paddingLeft: 11,
-                        }}
-                      >
-                        Update your skills
-                      </Text>
-                    </View>
-
-                    <Text
-                      style={{
-                        fontSize: 12,
-                        fontWeight: "400",
-                        color: "red",
-                      }}
-                    >
-                      32 mins
-                    </Text>
-                  </View>
-                )}
-              /> */}
             </View>
           </View>
         </>

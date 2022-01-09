@@ -92,12 +92,12 @@
         "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-mdpi/node_modules_reactnativecalendars_src_img_down.png"
     },
     {
-        "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
-        "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-xhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
-    },
-    {
         "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_icons_thumbsup.png.flat",
         "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-mdpi/assets_icons_thumbsup.png"
+    },
+    {
+        "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-xhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
     },
     {
         "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_icons_user1.png.flat",
@@ -204,6 +204,10 @@
         "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-mdpi/assets_images_lock.png"
     },
     {
+        "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_icons_tick.png.flat",
+        "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-mdpi/assets_icons_tick.png"
+    },
+    {
         "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-xxhdpi_node_modules_reactnativecalendars_src_calendar_img_next.png.flat",
         "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-xxhdpi/node_modules_reactnativecalendars_src_calendar_img_next.png"
     },
@@ -214,6 +218,10 @@
     {
         "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-xhdpi_node_modules_reactnavigation_stack_src_views_assets_backicon.png.flat",
         "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-xhdpi/node_modules_reactnavigation_stack_src_views_assets_backicon.png"
+    },
+    {
+        "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_icons_arrowforward.png.flat",
+        "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-mdpi/assets_icons_arrowforward.png"
     },
     {
         "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_images_refresh.png.flat",
@@ -418,6 +426,10 @@
     {
         "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_images_leaguebg.png.flat",
         "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-mdpi/assets_images_leaguebg.png"
+    },
+    {
+        "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_icons_info.png.flat",
+        "source": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/generated/res/react/release/drawable-mdpi/assets_icons_info.png"
     },
     {
         "merged": "/media/kiritotheblackswordsman/2834CBDE34CBAD5E/Workspace/React Native Projects/FYP/react native pro/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_icons_p1.png.flat",

@@ -1,16 +1,18 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 let Man = require("../../assets/images/man.png");
-const FriendsComponent = () => {
+const FriendsComponent = ({ block }) => {
   return (
     <View
       style={{
         flexDirection: "row",
         alignItems: "center",
+        justifyContent: "space-between",
       }}
     >
       <View style={{ flexDirection: "row" }}>
-        <Image style={{ height: 50, width: 50 }} source={Man} />
+        <Image style={{ height: 36, width: 36 }} source={Man} />
+
         <View style={{ marginLeft: 10 }}>
           <Text style={{ fontSize: 16, fontWeight: "bold" }}>Chriss</Text>
           <Text style={{ fontSize: 12, color: "gray" }}>
@@ -18,6 +20,11 @@ const FriendsComponent = () => {
           </Text>
         </View>
       </View>
+      {block && (
+        <View>
+          <Text style={{ fontSize: 12, color: "gray" }}>Blocked</Text>
+        </View>
+      )}
     </View>
   );
 };

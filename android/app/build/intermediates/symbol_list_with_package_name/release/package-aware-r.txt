@@ -1381,6 +1381,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable assets_icons_arrowforward
 drawable assets_icons_arrowhor
 drawable assets_icons_award
 drawable assets_icons_bar
@@ -1394,6 +1395,7 @@ drawable assets_icons_growth
 drawable assets_icons_hockey
 drawable assets_icons_hockeyrink
 drawable assets_icons_homeactive
+drawable assets_icons_info
 drawable assets_icons_layers
 drawable assets_icons_leagueinactive
 drawable assets_icons_live
@@ -1410,6 +1412,7 @@ drawable assets_icons_settings
 drawable assets_icons_share
 drawable assets_icons_star
 drawable assets_icons_thumbsup
+drawable assets_icons_tick
 drawable assets_icons_tiltphone
 drawable assets_icons_time
 drawable assets_icons_trophyinactive

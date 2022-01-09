@@ -72,6 +72,13 @@ import Score from "./src/screens/League/Score";
 import Coach from "./src/screens/League/Coach";
 import Messages from "./src/screens/Home/Messages";
 import Chat from "./src/screens/Home/Chat";
+import AddFriends from "./src/screens/Home/AddFriends";
+import ScheduledGames from "./src/screens/Home/ScheduledGames";
+import ScheduledGameDetails from "./src/screens/Home/ScheduledGameDetails";
+import JoinGameFromScheduled from "./src/screens/Home/JoinGame";
+import RefundRequest from "./src/screens/Home/RefundRequest";
+import UpdateYourSkills from "./src/screens/Home/UpdateYourSkills";
+import SelectPaymentModes from "./src/screens/Home/SelectPaymentModes";
 
 import Tournament from "./src/screens/Tournament/Tournament";
 
@@ -96,11 +103,6 @@ const AuthStack = () => (
         headerShown: false,
       }}
     />
-    {/* <Stack.Screen
-      name="Messages"
-      component={Messages}
-      options={{ headerShown: false }}
-    /> */}
     <Stack.Screen
       name="Welcome"
       component={Welcome}
@@ -292,6 +294,41 @@ const HomeStack = ({ navigation, route }) => {
       <Stack.Screen
         name="Chat"
         component={Chat}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="AddFriends"
+        component={AddFriends}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ScheduledGames"
+        component={ScheduledGames}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ScheduledGameDetails"
+        component={ScheduledGameDetails}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="JoinGameFromScheduled"
+        component={JoinGameFromScheduled}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="RefundRequest"
+        component={RefundRequest}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="UpdateYourSkills"
+        component={UpdateYourSkills}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SelectPaymentModes"
+        component={SelectPaymentModes}
         options={{ headerShown: false }}
       />
       <Stack.Screen
